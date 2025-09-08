@@ -5,8 +5,8 @@ on:
     branches:
       - main # main branch name
     paths:
-      - 'sonar-scanner-maven/maven-multimodule' # monorepo projects paths from the monorepo root directory
-      - 'sonar-scanner-maven/maven-multilingual'
+      - 'sonar-scanner-maven/maven-multimodule/**' # monorepo projects paths from the monorepo root directory
+      - 'sonar-scanner-maven/maven-multilingual/**'
   pull_request:
     types: [opened, synchronize, reopened]
 
