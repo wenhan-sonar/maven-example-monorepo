@@ -39,7 +39,7 @@ jobs:
       - name: SonarQube Scan 1
         env:
           SONAR_TOKEN: ${{ secrets.NAUTILUS2_SONAR_TOKEN }}  # analysis token associated to your project
-          SONAR_HOST_URL: ${{ vars.NAUTILUS2_SONAR_HOST_URL }}
+          SONAR_HOST_URL: ${{ secrets.NAUTILUS2_SONAR_HOST_URL }}
         run: |
             cd sonar-scanner-maven/maven-multimodule/
             mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=wenhan-sonar_maven-example-monorepo -Dsonar.projectName='wenhan-sonar_maven-example-monorepo' 
@@ -72,7 +72,7 @@ jobs:
       - name: SonarQube Scan 2
         env:
           SONAR_TOKEN: ${{ secrets.NAUTILUS2_SONAR_TOKEN }} # analysis token associated to your project
-          SONAR_HOST_URL: ${{ vars.NAUTILUS2_SONAR_HOST_URL }}
+          SONAR_HOST_URL: ${{ secrets.NAUTILUS2_SONAR_HOST_URL }}
         run: |
             cd sonar-scanner-maven/maven-multilingual/
             mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=wenhan-sonar_maven-example-monorepo -Dsonar.projectName='wenhan-sonar_maven-example-monorepo'
